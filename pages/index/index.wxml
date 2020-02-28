@@ -1,0 +1,31 @@
+
+<!-- 搜索栏部分 -->
+<navigator url="">
+  <view class="search">
+    <view class="search-input">
+      <icon type="search" size="23"/>
+      <text>搜索</text>
+    </view>
+  </view>
+</navigator>
+
+<!-- 轮播图部分 -->
+<swiper 
+    class="swiper"
+    indicator-dots="true"
+    indicator-color="rgba(255, 255, 255, .3)"
+    indicator-active-color="rgba(255, 255, 255, 1)"
+    autoplay="true" 
+    interval="2000" 
+    duration="500" 
+    circular="true">
+    <block wx:for="{{swiperList}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item.image_src}}" mode="aspectFill"></image>
+      </swiper-item>
+    </block>
+</swiper>
+
+<!-- 导航栏部分 -->
+<view>
+</view>
