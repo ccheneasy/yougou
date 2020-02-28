@@ -62,7 +62,7 @@
 </view>
 
 <!-- 回到顶部 -->
-<view class="retop" bindtap="totop">
+<view class="retop" bindtap="totop" wx:if='{{isshow}}'>
   <view class="top"></view>
   <text>顶部</text>
 </view>
