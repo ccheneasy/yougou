@@ -27,5 +27,10 @@
 </swiper>
 
 <!-- 导航栏部分 -->
-<view>
+<view class="menus">
+  <block wx:for="{{catitems}}" wx:key="index">
+    <navigator url="{{item.url}}" open-type='{{item.open_type}}'>
+      <image src="{{item.image_src}}"></image>
+    </navigator>
+  </block>
 </view>

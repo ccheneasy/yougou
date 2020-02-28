@@ -17,3 +17,13 @@
   width: 750rpx;
   height: 340rpx;
 }
+
+.menus{
+  padding: 24rpx 0;
+  display: flex;
+  justify-content: space-around
+}
+.menus image {
+  width: 128rpx;
+  height: 128rpx
+}
