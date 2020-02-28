@@ -34,3 +34,35 @@
     </navigator>
   </block>
 </view>
+
+
+<!-- 楼层部分 -->
+<view>
+  <block wx:for='{{floors}}' wx:key="index">
+      <!-- 横栏标题 -->
+      <view class="floors">
+        <view class="titleImage">
+          <image src="{{item.floor_title.image_src}}" mode="aspectFill"></image>
+        </view>
+        <!-- 内容 -->
+        <view class="floorContent">
+            <!-- 左边图片部分 -->
+            <view class="floorContentLeft">
+              <image src="{{item.product_list[0].image_src}}" mode="aspectFill"></image>
+            </view>
+            <!-- 右边图片部分 -->
+            <view class="floorContentRight">
+              <block wx:for="{{item.product_list}}" wx:key="index" >
+                <image src="{{item.image_src}}" mode="aspectFill" wx:if="{{index>0}}"></image>
+              </block>
+            </view>
+        </view>
+      </view>
+  </block>
+</view>
+
+<!-- 回到顶部 -->
+<view class="retop" bindtap="totop">
+  <view class="top"></view>
+  <text>顶部</text>
+</view>

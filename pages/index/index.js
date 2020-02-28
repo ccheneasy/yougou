@@ -2,11 +2,24 @@
 import request from '../../utils/request.js'
 Page({
   data: {
+    // 轮播图数据
     swiperList:[],
-    catitems:[]
+    // 导航栏数据
+    catitems:[],
+    // 楼层数据
+    floors:[]
   },
   
+  // 回到顶部
+  totop(){
+    wx.pageScrollTo({
+      scrollTop: 0,
+      duration: 300
+    })
+  },
+
   onLoad(){
+
     // 获取swiper轮播图的请求
       request({
         url: '/home/swiperdata'
@@ -15,6 +28,8 @@ Page({
           swiperList : res.data.message
         })
       })
+
+
       // 获取导航栏的请求
       request({
         url:"/home/catitems"
@@ -32,6 +47,16 @@ Page({
         })
       })
       
+
+      // 获取楼层展示部分的请求
+      request({
+        url: "/home/floordata"
+      }).then(res=>{
+        console.log(res)
+        this.setData({
+          floors: res.data.message
+        })
+      })
   }
 
 })
