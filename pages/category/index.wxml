@@ -18,13 +18,15 @@
     <!-- <image class="topimg" src="../../images/hani.jpeg" mode="widthFix"></image> -->
     <view>
       <block wx:for="{{category[current].children}}" wx:key="index">
-      <view class="right_title">{{item.cat_name}}</view>
-      <view  class="right_item">
-        <view class="right_item_content" wx:for='{{item.children}}' wx:key="index" >
-          <image class="right_item_image" mode="widthFix" src="{{item.cat_icon}}"></image>
-          <text>{{item.cat_name}}</text>
+        <view class="right_title">{{item.cat_name}}</view>
+        <view  class="right_item">
+          <block wx:for='{{item.children}}' wx:key="index" >
+            <navigator class="right_item_content" >
+              <image class="right_item_image" mode="widthFix" src="{{item.cat_icon}}"></image>
+              <text>{{item.cat_name}}</text>
+            </navigator>
+          </block>
         </view>
-      </view>
       </block>
     </view>
   </view>
