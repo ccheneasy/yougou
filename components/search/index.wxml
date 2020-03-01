@@ -1,0 +1,9 @@
+<!-- 搜索栏部分 -->
+<navigator url="">
+  <view class="search">
+    <view class="search-input">
+      <icon type="search" size="23"/>
+      <text>搜索</text>
+    </view>
+  </view>
+</navigator>
