@@ -1,1 +1,74 @@
 /* pages/category/index.wxss */
+
+.container{
+  position: fixed;
+  top: 100rpx;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.left{
+  height: 100%;
+  overflow: auto;
+  background-color: #f4f4f4;
+  flex-shrink: 0
+}
+
+.left::-webkit-scrollbar{
+  display: none
+}
+
+.left-item{
+  font-size: 14px; 
+  padding: 25rpx 50rpx;
+  position: relative
+}
+
+.active{
+  background-color: #fff;
+  color: red;
+}
+
+.active::before{
+  display: block;
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  top: 50%;
+  left: 0;
+  background-color: #ff2d4a;
+  transform: translateY(-10px)
+}
+
+.right{
+  flex: 1;
+  overflow: auto;
+  padding: 20rpx 20rpx 0 20rpx;
+}
+.right::-webkit-scrollbar{
+  display: none
+}
+
+.right_title{
+  width: 100%;
+  text-align: center;
+  padding: 40rpx 0;
+}
+.right_item{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.right_item_content{
+  box-sizing: border-box;
+  width: 33.33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  padding: 10rpx;
+}
+.right_item_image{
+  width: 100%
+}

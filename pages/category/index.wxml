@@ -1,3 +1,31 @@
-<!-- 搜索栏部分 -->
 
+<!-- 搜索栏部分 -->
 <search/>
+
+<view class="container">
+  <!-- 左边分类栏目 -->
+  <view class="left">
+    <block wx:for="{{category}}" wx:key="index">
+      <view 
+      class="left-item {{current === index ? 'active':''}}" 
+      bindtap="clickcolor" 
+      data-item="{{index}}">{{item.cat_name}}</view>
+    </block>
+  </view>
+
+  <!-- 右边品牌详情 -->
+  <view class="right">
+    <!-- <image class="topimg" src="../../images/hani.jpeg" mode="widthFix"></image> -->
+    <view>
+      <block wx:for="{{category[current].children}}" wx:key="index">
+      <view class="right_title">{{item.cat_name}}</view>
+      <view  class="right_item">
+        <view class="right_item_content" wx:for='{{item.children}}' wx:key="index" >
+          <image class="right_item_image" mode="widthFix" src="{{item.cat_icon}}"></image>
+          <text>{{item.cat_name}}</text>
+        </view>
+      </view>
+      </block>
+    </view>
+  </view>
+</view>
