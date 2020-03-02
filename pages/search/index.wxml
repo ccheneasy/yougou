@@ -6,7 +6,7 @@
   <view class="searchBox">
     <view class="input">
       <icon type="search" size="20"/>
-      <input  placeholder="请输入你想要的商品"></input>
+      <input  placeholder="请输入你想要的商品" bindconfirm="inputEvent"></input>
     </view>
     <view class="button">取消</view>
   </view>

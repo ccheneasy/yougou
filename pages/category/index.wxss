@@ -1,7 +1,7 @@
 /* pages/category/index.wxss */
 
 .container{
-  position: fixed;
+  position: absolute;
   top: 100rpx;
   bottom: 0;
   display: flex;
@@ -70,5 +70,6 @@
   padding: 10rpx;
 }
 .right_item_image{
-  width: 100%
+  width: 120rpx;
+  height: 120rpx;
 }

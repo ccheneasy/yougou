@@ -22,7 +22,7 @@
         <view  class="right_item">
           <block wx:for='{{item.children}}' wx:key="index" >
             <navigator class="right_item_content" >
-              <image class="right_item_image" mode="widthFix" src="{{item.cat_icon}}"></image>
+              <image class="right_item_image" mode="aspectFill" src="{{item.cat_icon}}"></image>
               <text>{{item.cat_name}}</text>
             </navigator>
           </block>
