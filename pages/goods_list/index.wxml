@@ -41,7 +41,14 @@
           </view>
         </navigator>
       </block>
+
+      <!-- 底部提示 -->
+      <view class="loading">
+        <view wx:if="{{hasMore}}">加载中ing</view>
+        <view wx:if="{{!hasMore}}">我已经到底啦~~~</view>
+      </view>
     </view>
+
   </view>
 
 
