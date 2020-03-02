@@ -12,7 +12,7 @@ Page({
     hasMore: true,
     // 页面
     pagenum: 1,
-    // 是否正在加载中
+    // 是否正在加载中  开关思想
     loading: true
   },
 
@@ -25,11 +25,15 @@ Page({
 
   // 页面上拉触底事件
   onReachBottom(){
+    if (this.data.loading === true){return;}
     console.log("触发了一次底部")
     this.setData({
-      pagenum:this.data.pagenum + 1
+      pagenum:this.data.pagenum + 1,
+      loading: true
     })
+    // 调用接口
     this.getDataList()
+    
     // 做一个判断，是否为数据展示完成了
     if (this.data.total == this.data.goodsList.length){
       this.setData({
@@ -57,7 +61,9 @@ Page({
         this.setData({
           // 为了让上一页的数据不丢失 数组也可以解构
           goodsList: [...this.data.goodsList , ...goods] ,
-          total: res.data.message.total
+          total: res.data.message.total,
+          // 当请求完成时，改变loading的状态
+          loading: false
         })
       })
     console.log("请求了一次request")
