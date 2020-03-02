@@ -4,7 +4,7 @@
     "pages/category/index",
     "pages/cart/index",
     "pages/personal/index",
-    "pages/search/index"
+    "pages/goods_list/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

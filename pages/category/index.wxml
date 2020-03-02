@@ -21,7 +21,7 @@
         <view class="right_title">{{item.cat_name}}</view>
         <view  class="right_item">
           <block wx:for='{{item.children}}' wx:key="index" >
-            <navigator class="right_item_content" >
+            <navigator class="right_item_content" url="/pages/goods_list/index?name={{item.cat_name}}">
               <image class="right_item_image" mode="aspectFill" src="{{item.cat_icon}}"></image>
               <text>{{item.cat_name}}</text>
             </navigator>

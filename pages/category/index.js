@@ -21,6 +21,7 @@ Page({
     request({
       url:"/categories"
     }).then(res=>{
+      console.log(res)
       this.setData({
         category: res.data.message
       })
