@@ -7,13 +7,18 @@
       <view class="searchinput">
         <view class="search">
           <icon type="search" size="20"></icon>
-          <input bindinput="bindinput"  placeholder="请输入你想要的商品"></input>
+          <input 
+          value="{{value}}" 
+          bindinput="bindinput"  
+          bindconfirm = "bindconfirm"
+          bindblur="handleBlur"
+          placeholder="请输入你想要的商品"></input>
         </view>
-        <view class="button" wx:if="{{value}}">取消</view>
+        <view class="button" wx:if="{{value}}" bindtap="cancel">取消</view>
       </view>
       <!-- 搜索列表 -->
       <view class="searchList" wx:if="{{value}}">
-          <view class="searchListItem" wx:for="{{searchlist}}" wx:key="index">{{item.goods_name}}</view>
+          <navigator url="" class="searchListItem" wx:for="{{searchlist}}" wx:key="index">{{item.goods_name}}</navigator>
       </view>
     </view>
 
@@ -21,11 +26,11 @@
     <view class="searchhistory">
       <view class="title">
         <view>历史搜索</view>
-        <icon type="clear" size="16"></icon>
+        <icon type="clear" size="16" bindtap="clearhistory"></icon>
       </view>
 
       <view class="historycontent">
-        <view class="item" wx:for="{{10}}" wx:key="index">我就睡着</view>
+        <view class="item" wx:for="{{historyList}}" wx:key="index">{{item}}</view>
       </view>
     </view>
 
