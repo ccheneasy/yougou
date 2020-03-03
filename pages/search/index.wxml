@@ -1,12 +1,20 @@
+
 <view class="container">
 
     <!-- 搜索框部分 -->
-    <view class="searchinput">
-      <view class="search">
-        <icon type="search" size="20"></icon>
-        <input placeholder="请输入你想要的商品"></input>
+    <view class="searchcontainer">
+      <!-- 搜索栏 -->
+      <view class="searchinput">
+        <view class="search">
+          <icon type="search" size="20"></icon>
+          <input bindinput="bindinput"  placeholder="请输入你想要的商品"></input>
+        </view>
+        <view class="button" wx:if="{{value}}">取消</view>
       </view>
-      <view class="button">取消</view>
+      <!-- 搜索列表 -->
+      <view class="searchList" wx:if="{{value}}">
+          <view class="searchListItem" wx:for="{{searchlist}}" wx:key="index">{{item.goods_name}}</view>
+      </view>
     </view>
 
     <!-- 历史记录 -->
