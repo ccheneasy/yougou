@@ -66,6 +66,5 @@ Page({
           loading: false
         })
       })
-    console.log("请求了一次request")
   }
 })

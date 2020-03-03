@@ -1,0 +1,24 @@
+<view class="container">
+
+    <!-- 搜索框部分 -->
+    <view class="searchinput">
+      <view class="search">
+        <icon type="search" size="20"></icon>
+        <input placeholder="请输入你想要的商品"></input>
+      </view>
+      <view class="button">取消</view>
+    </view>
+
+    <!-- 历史记录 -->
+    <view class="searchhistory">
+      <view class="title">
+        <view>历史搜索</view>
+        <icon type="clear" size="16"></icon>
+      </view>
+
+      <view class="historycontent">
+        <view class="item" wx:for="{{10}}" wx:key="index">我就睡着</view>
+      </view>
+    </view>
+
+</view>

@@ -4,10 +4,10 @@
 
   <!-- 搜索框 -->
   <view class="searchBox">
-    <view class="input">
+    <navigator class="input" url="/pages/search/index">
       <icon type="search" size="20"/>
       <view>{{name}}</view>
-    </view>
+    </navigator>
   </view>
 
      
