@@ -26,12 +26,16 @@
   border-radius: 8px
 }
 
+.search input{
+  margin-left:10rpx;
+  width: 100%
+}
 .button{
   font-size: 12px;
   box-sizing: border-box;
   padding: 10rpx 30rpx;
   border: 1px solid #d7d6d7;
-  border-radius: 5px
+  border-radius: 8px
 }
 
 .searchhistory{
