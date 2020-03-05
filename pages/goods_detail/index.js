@@ -1,66 +1,45 @@
 // pages/goods_detail/index.js
+
+import request from '../../utils/request.js'
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    // 商品详情
+    detail:'',
+    // tab栏
+    current:0
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-
+    request({
+      url:"/goods/detail",
+      data:{
+        goods_id: options.id
+      }
+    }).then(res=>{
+      this.setData({
+        detail: res.data.message
+      })
+      console.log(this.data.detail)
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  handletab(e){
+    this.setData({
+      current: e.currentTarget.dataset.tab
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  // 预览图片
+  prewimg(e){
+    // 为了符合urls的格式，进行数据改造
+    let arr = this.data.detail.pics.map(v=>{
+      return v.pics_big
+    })
+    wx.previewImage({
+      // 想点击进去先显示哪张图片
+      current: arr[e.currentTarget.dataset.indeximg],
+      urls: arr
+    })
   }
 })

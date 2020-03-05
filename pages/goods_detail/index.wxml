@@ -1,2 +1,67 @@
-<!--pages/goods_detail/index.wxml-->
-<text>pages/goods_detail/index.wxml</text>
+
+
+<view class="container">
+  <!-- 轮播大图 -->
+    <swiper 
+    indicator-dots='true' 
+    autoplay='true' 
+    interval='3000'
+    duration="500"
+    circular="true"
+    class="swiper">
+      <swiper-item wx:for="{{detail.pics}}" wx:key="index">
+        <image bindtap="prewimg" data-indeximg='{{index}}' mode="widthFix" src="{{item.pics_big}}"></image>
+      </swiper-item>
+    </swiper>
+  
+  <!-- 价格 -->
+  <view class="price">￥{{detail.goods_price}}</view>
+  <!-- 标题介绍 -->
+  <view class="titleinfo">
+    <view class="title">
+    {{detail.goods_name}}
+    </view>
+    <view class="collect">
+      <view class="iconfont iconshoucang"></view>
+      <view class="collectitem">收藏</view>
+    </view>
+  </view>
+  <!-- 快递免运费 -->
+  <view class="coury">快递：免运费</view>
+  <view class="sales">
+    <text>促销</text>
+    <text class="substract">满300减30元</text>
+  </view>
+
+
+  <view class="info">
+    <!-- active一定要加引号 -->
+    <view class="infocontent {{current==index? 'active':''}}" data-tab="{{index}}" bindtap="handletab" wx:for="{{['详情','规格']}}" wx:key="index">{{item}}</view>
+  </view>
+  <rich-text wx:if="{{current===0}}" nodes="{{detail.goods_introduce}}"></rich-text>
+  <view class="spe" wx:if="{{current===1}}">
+      <view wx:for="{{detail.attrs}}" wx:key="index">
+        <text>{{item.attr_name}}：</text>
+        <text>{{item.attr_vals}}</text>
+      </view>
+  </view>
+  <!-- 底部 -->
+  <view class="bottom">
+    <view class="call">
+      <view class="iconfont iconkefu"></view>
+      <view>联系客服</view>
+    </view>
+    <view class="cart">
+      <view class="iconfont icongouwuche"></view>
+      <view>购物车</view>
+    </view>
+    <view class="addcart">
+      <view class="iconfont"></view>
+      <view>加入购物车</view>
+    </view>
+    <view class="buy">
+      <view class="iconfont"></view>
+      <view>立即购买</view>
+    </view>
+  </view>
+</view>
