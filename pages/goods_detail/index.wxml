@@ -47,6 +47,7 @@
   </view>
   <!-- 底部 -->
   <view class="bottom">
+    <button class="button" open-type="contact"></button>
     <view class="call">
       <view class="iconfont iconkefu"></view>
       <view>联系客服</view>
