@@ -86,7 +86,7 @@ Page({
     //   value:''
     // })
     
-    this.handlestorage()
+    // this.handlestorage()
   },
   // 输入框确认事件
   bindconfirm(){
@@ -96,6 +96,15 @@ Page({
     wx.redirectTo({
       url:'/pages/goods_list/index?name='+this.data.value
     })
+  },
+  // 点击跳转到商品详情页面
+  handletogoodsList(e){
+    console.log(e.target.dataset.nameid)
+    if(!e.target.dataset.id){
+      this.setData({
+        searchlist: []
+      })
+    }
   },
   // 点击取消事件
   cancel(){

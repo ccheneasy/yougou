@@ -1,6 +1,7 @@
 .container{
   width: 750rpx;
   box-sizing: border-box;
+  min-height:100vh 
 }
 
 .searchcontainer{

@@ -1,5 +1,5 @@
 
-<view class="container">
+<view class="container" bindtap="handletogoodsList">
 
     <!-- 搜索框部分 -->
     <view class="searchcontainer">
@@ -17,8 +17,8 @@
         <view class="button" wx:if="{{value}}" bindtap="cancel">取消</view>
       </view>
       <!-- 搜索列表 -->
-      <view class="searchList" wx:if="{{value}}">
-          <navigator url="" class="searchListItem" wx:for="{{searchlist}}" wx:key="index">{{item.goods_name}}</navigator>
+      <view class="searchList" wx:if="{{searchlist.length}}">
+          <navigator url="/pages/goods_detail/index?id={{item.goods_id}}" data-nameid="{{item.goods_id}}" class="searchListItem"  wx:for="{{searchlist}}" wx:key="index">{{item.goods_name}}</navigator>
       </view>
     </view>
 
