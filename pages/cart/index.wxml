@@ -2,23 +2,23 @@
 <!-- 收货地址 -->
 <view class="container">
   <!-- 收货人 -->
-  <view class="info">
-
+  <view class="getinfo"  bindtap="getadress" wx:if="{{!adress.userName}}">获取收货地址</view>
+  <view class="info" wx:if="{{adress.userName}}">
     <!-- 收货人 -->
     <view class="men">
       收货人：
-      <text>苏</text>
+      <text>{{adress.userName}}</text>
     </view>
     <!-- 电话 -->
     <view class="tel">
-      <view>13241322313</view>
+      <view>{{adress.telNumber}}</view>
       <text class="iconfont iconxiangyou"></text>
     </view>
   </view>
 
     <!-- 收货地址 -->
-    <view class="adress">
-      收货地址：<text>广东省广州市天河区朱吉</text>
+    <view class="adress" wx:if="{{adress.userName}}">
+      收货地址：<text>{{adress.adressinfo}}</text>
     </view>
 
   <!-- 图片分界线 -->

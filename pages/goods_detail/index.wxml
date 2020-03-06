@@ -52,17 +52,15 @@
       <view class="iconfont iconkefu"></view>
       <view>联系客服</view>
     </view>
-    <navigator url="/pages/cart/index" class="cart" open-type="switchTab">
+    <navigator url="/pages/cart/index?cart={{this.data.cart}}" class="cart" open-type="switchTab">
       <view class="iconfont icongouwuche"></view>
       <view>购物车</view>
     </navigator>
-    <view class="addcart">
-      <view class="iconfont"></view>
-      <view>加入购物车</view>
+    <view class="addcart" bindtap="addcart">
+      加入购物车
     </view>
     <view class="buy">
-      <view class="iconfont"></view>
-      <view>立即购买</view>
+      立即购买
     </view>
   </view>
 </view>
