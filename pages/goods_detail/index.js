@@ -61,12 +61,21 @@ Page({
     let exist = cart.some(v=>{
       if (v.id === this.data.detail.goods_id){
         v.number+=1
+        wx.showToast({
+          title: '数量+1',
+          icon: 'success'
+        })
       }
       return v.id === this.data.detail.goods_id
     })
     if (!exist){
       cart.unshift(item)
+      wx.showToast({
+        title: '加入成功',
+        icon: 'success'
+      })
     }
+    // 保存到本地
     wx.setStorageSync('cart', cart)
   }
 })
