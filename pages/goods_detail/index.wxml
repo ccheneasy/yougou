@@ -52,10 +52,10 @@
       <view class="iconfont iconkefu"></view>
       <view>联系客服</view>
     </view>
-    <view class="cart">
+    <navigator url="/pages/cart/index" class="cart" open-type="switchTab">
       <view class="iconfont icongouwuche"></view>
       <view>购物车</view>
-    </view>
+    </navigator>
     <view class="addcart">
       <view class="iconfont"></view>
       <view>加入购物车</view>

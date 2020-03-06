@@ -1,2 +1,81 @@
-<!--pages/cart/index.wxml-->
-<text>pages/cart/index.wxml</text>
+
+<!-- 收货地址 -->
+<view class="container">
+  <!-- 收货人 -->
+  <view class="info">
+
+    <!-- 收货人 -->
+    <view class="men">
+      收货人：
+      <text>苏</text>
+    </view>
+    <!-- 电话 -->
+    <view class="tel">
+      <view>13241322313</view>
+      <text class="iconfont iconxiangyou"></text>
+    </view>
+  </view>
+
+    <!-- 收货地址 -->
+    <view class="adress">
+      收货地址：<text>广东省广州市天河区朱吉</text>
+    </view>
+
+  <!-- 图片分界线 -->
+  <image class="img" src="../../images/cart_border@2x.png"></image>
+
+  <!-- 商品板块 -->
+  <view class="content">
+    <!-- 标题 -->
+    <view class="title">
+      <text class="iconfont icondianpu"></text>
+      <view>优胜生活馆</view>
+    </view>
+    <!-- 循环的商品项 -->
+    <view >
+      <view class="contentitem">
+        <!-- 全选 -->
+        <icon type="success" size="16" color="red"/>
+        <!-- 预览图 -->
+        <view class="itemcontent">
+          <image mode="aspectFill" src="https://img10.360buyimg.com/pop/s590x470_jfs/t1/88367/6/10155/65681/5e16e174E98d14453/f1c03421a6984a47.jpg.webp">
+          </image>
+          <view class="itemdetail">
+            <!-- 标题 -->
+            <view class="itemdetailtitle">初语初语初初语初语初语初语初语初语初语初语</view>
+            <view class="price">
+              <text>￥279.00</text>
+              <view class="calc">
+                <view class="iconfont iconjian flexitem"></view>
+                <input class="flexitem" value="{{1}}"></input>
+                <view class="iconfont iconjjia- flexitem"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 结算板块 -->
+  <view class="allcheck">
+    <!-- 全选 -->
+    <view class="check">
+      <icon type="success" size="16" color="red"/>
+      <text>全选</text>
+    </view>
+
+    <!-- 合计 -->
+    <view class="all">
+      <text>
+        <text>合计：</text>
+        <text class="money">12313.00</text>
+      </text>
+      <view>包含运费</view>
+    </view>
+
+    <!-- 结算 -->
+    <view class="jiesuan">结算(3)</view>
+  </view>
+  
+</view>

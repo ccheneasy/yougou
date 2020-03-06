@@ -28,7 +28,7 @@
     <!-- 内容展示区域 -->
     <view >
       <block wx:for="{{goodsList}}" wx:key="index">
-        <navigator url="/pages/goods_detail/index?id={{item.goods_id}}" class="goodsListItem">
+        <navigator class="goodsListItem" url="/pages/goods_detail/index?id={{item.goods_id}}" >
           <!-- 商品图片 -->
             <image class="itemImage" src="{{item.goods_small_logo}}"></image>
           

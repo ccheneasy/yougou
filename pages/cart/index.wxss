@@ -1,1 +1,156 @@
-/* pages/cart/index.wxss */
+
+.container{
+  padding-bottom: 100rpx;
+}
+.info{
+  box-sizing: border-box;
+  padding: 20rpx;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+
+.men{
+  margin: 10rpx 0;
+}
+
+.tel{
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+
+.tel view{
+  margin-right: 40rpx
+}
+
+.adress{
+  font-size: 14px;
+  margin-left: 20rpx;
+}
+.img{
+  height: 10rpx;
+  width: 100%
+}
+
+.content{
+  box-sizing: border-box;
+  padding: 10rpx 0 10rpx 30rpx;
+}
+.title{
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin: 20rpx 0
+}
+.icondianpu{
+  margin-right: 10rpx
+}
+
+
+.contentitem{
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+
+.contentitem icon{
+  margin-right: 30rpx
+}
+.itemcontent{
+  height: 100%;
+  border-top: 1px solid #eee ;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 0
+}
+
+.itemcontent image{
+  width: 160rpx;
+  height: 160rpx;
+  flex-shrink: 0
+}
+
+.itemdetail{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 20rpx;
+}
+
+.itemdetailtitle{
+  font-size: 12px;
+  margin-bottom: 50rpx;
+  overflow:hidden;
+  display:-webkit-box; 
+  -webkit-line-clamp:2; 
+  -webkit-box-orient:vertical; 
+}
+.price{
+  display: flex;
+  justify-content: space-between;
+}
+
+.price text{
+  color: #ff2d4a;
+}
+
+.calc{
+  width: 40%;
+  display: flex;
+  align-items: center
+}
+.flexitem{
+  flex: 1
+}
+
+
+.allcheck{
+  height: 100rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%
+}
+.check{
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  margin-left:20rpx ;
+  width: 30%
+}
+.all{
+  flex: 1;
+  font-size: 14px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center
+
+}
+.all>view{
+  font-size: 10px;
+  color: #666
+}
+.money{
+  color: #ff2d4a
+}
+.jiesuan{
+  width: 30%;
+  height: 100%;
+  background-color: #ff2d4a;
+  color: #fff;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20rpx;
+  
+}

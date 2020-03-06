@@ -1,12 +1,13 @@
 
 
 .searchBox{
+  box-sizing: border-box;
   width: 750rpx;
-  height: 80rpx;
   background-color: #eeeeee;
   padding: 30rpx 20rpx;
 }
 .input{
+  box-sizing: border-box;
   width: 100%;
   padding: 10rpx;
   background-color: #fff;
