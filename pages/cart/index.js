@@ -3,7 +3,9 @@ Page({
 
   data: {
     // 收货地址
-    adress: {}
+    adress: {},
+    // 商品信息
+    cart:[]
   },
 
   onLoad: function (options) {
@@ -12,8 +14,10 @@ Page({
 
   onShow: function () {
     this.setData({
-      adress: wx.getStorageSync('adress')
+      adress: wx.getStorageSync('adress'),
+      cart: wx.getStorageSync('cart')
     })
+
   },
 
   // 获取收货地址

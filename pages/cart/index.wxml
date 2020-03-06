@@ -33,18 +33,18 @@
     </view>
     <!-- 循环的商品项 -->
     <view >
-      <view class="contentitem">
+      <view class="contentitem" wx:for="{{cart}}" wx:key="index">
         <!-- 全选 -->
         <icon type="success" size="16" color="red"/>
         <!-- 预览图 -->
         <view class="itemcontent">
-          <image mode="aspectFill" src="https://img10.360buyimg.com/pop/s590x470_jfs/t1/88367/6/10155/65681/5e16e174E98d14453/f1c03421a6984a47.jpg.webp">
+          <image mode="aspectFill" src="{{item.logo}}">
           </image>
           <view class="itemdetail">
             <!-- 标题 -->
-            <view class="itemdetailtitle">初语初语初初语初语初语初语初语初语初语初语</view>
+            <view class="itemdetailtitle">{{item.name}}</view>
             <view class="price">
-              <text>￥279.00</text>
+              <text>￥{{item.price}}</text>
               <view class="calc">
                 <view class="iconfont iconjian flexitem"></view>
                 <input class="flexitem" value="{{1}}"></input>
