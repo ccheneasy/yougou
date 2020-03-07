@@ -119,7 +119,9 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  position: absolute;
+  position: fixed;
+  /* z-index: 9; */
+  background-color: #fff;
   left: 0;
   bottom: 0;
   width: 100%
@@ -148,6 +150,7 @@
   color: #ff2d4a
 }
 .jiesuan{
+  
   width: 30%;
   height: 100%;
   background-color: #ff2d4a;
