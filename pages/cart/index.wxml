@@ -35,7 +35,7 @@
     <view >
       <view class="contentitem" wx:for="{{cart}}" wx:key="index">
         <!-- 全选 -->
-        <icon type="success" size="16" color="red"/>
+        <icon type="success" size="16" color="{{item.check? 'red':'gray'}}" bindtap="checkitem" data-index="{{index}}"/>
         <!-- 预览图 -->
         <view class="itemcontent">
           <image mode="aspectFill" src="{{item.logo}}">
@@ -69,8 +69,8 @@
   <!-- 结算板块 -->
   <view class="allcheck">
     <!-- 全选 -->
-    <view class="check">
-      <icon type="success" size="16" color="red"/>
+    <view class="check" bindtap="allcheck">
+      <icon type="success" size="16" color="{{allchecked? 'red':'gray'}}"/>
       <text>全选</text>
     </view>
 

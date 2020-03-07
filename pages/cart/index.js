@@ -1,4 +1,4 @@
-// pages/cart/index.js
+
 Page({
 
   data: {
@@ -9,7 +9,9 @@ Page({
     // 总共价钱
     allprice:'',
     // 总共商品个数
-    allnumber: ''
+    allnumber: '',
+    // 全选的状态
+    allchecked: true
   },
 
   onLoad: function (options) {
@@ -23,7 +25,6 @@ Page({
     })
     // 调用方法更新价格
     this.getallprice()
-    console.log(this.data.allprice)
   },
 
   // 获取收货地址
@@ -44,6 +45,7 @@ Page({
   calcnum(e){
     let {index,number} = e.currentTarget.dataset
     let cart = this.data.cart
+    console.log(cart)
     // 在未减之前提示用户
     if (cart[index].number <= 1 && number === -1) {
       // 提示用户删除最后一个
@@ -82,7 +84,9 @@ Page({
     let allnumber = 0
     // 总共的价钱
     let allprice = 0
+    if (this.data.cart.length === 0)return;
     this.data.cart.forEach(v => {
+      if(!v.check)return;
       allprice += v.price * v.number
       allnumber += v.number
     })
@@ -91,5 +95,46 @@ Page({
       allprice: allprice,
       allnumber: allnumber
     })
+  },
+
+  // 全选的按钮
+  allcheck(){
+    // 将此时的选择的状态取反
+    this.setData({
+      allchecked:!this.data.allchecked
+    })
+    // 更改数组里面的所有项的状态
+      this.data.cart.forEach(v=>{
+        v.check = this.data.allchecked
+      })
+      this.setData({
+        cart: this.data.cart
+      })
+      // 调用计算的方法，重新计算价格
+      this.getallprice()
+  },
+  // 单个商品的单选
+  checkitem(e){
+    // 点击改变此时的check的状态
+    let { index } = e.currentTarget.dataset
+    this.data.cart[index].check = !this.data.cart[index].check
+    this.setData({
+      cart: this.data.cart
+    })
+    // 通过遍历，判断是否是全选全不选的状态,进而改变全选的状态
+    let ischeck = this.data.cart.some(v => {
+      return !v.check
+    })
+    if(!ischeck){
+      this.data.allchecked = true
+    }else{
+      this.data.allchecked = false
+    }
+    // 此时必须更改数据
+    this.setData({
+      allchecked: this.data.allchecked
+    })
+    // 调用计算的方法，重新计算价格
+    this.getallprice()
   }
 })

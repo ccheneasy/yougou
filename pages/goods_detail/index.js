@@ -20,7 +20,6 @@ Page({
       this.setData({
         detail: res.data.message
       })
-      console.log(this.data.detail)
     })
   },
 
@@ -49,7 +48,10 @@ Page({
       name: this.data.detail.goods_name,
       price: this.data.detail.goods_price,
       logo: this.data.detail.goods_small_logo,
-      number:1
+      // 商品个数的字段
+      number:1,
+      // 是否选择的字段,默认选中
+      check:true,
     }
     wx.showToast({
       title: '添加成功',
