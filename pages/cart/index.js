@@ -23,6 +23,7 @@ Page({
     })
     // 调用方法更新价格
     this.getallprice()
+    console.log(this.data.allprice)
   },
 
   // 获取收货地址
@@ -49,7 +50,7 @@ Page({
       wx.showModal({
         title: '提示',
         content: '删除此商品',
-        success(res) {
+        success:(res)=> {
           if (res.confirm) {
             cart.splice(index,1)
           }
@@ -57,6 +58,7 @@ Page({
           this.setData({
             cart: cart,
           })
+          wx: wx.setStorageSync("cart", cart)
         }
       })
     }else{
@@ -68,6 +70,7 @@ Page({
     this.setData({
       cart: cart,
     })
+    wx:wx.setStorageSync("cart", cart)
     // 调用方法更新价格
     this.getallprice()
   },
