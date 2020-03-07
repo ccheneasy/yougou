@@ -60,7 +60,7 @@ Page({
           this.setData({
             cart: cart,
           })
-          wx: wx.setStorageSync("cart", cart)
+          wx.setStorageSync("cart", cart)
         }
       })
     }else{
@@ -72,11 +72,32 @@ Page({
     this.setData({
       cart: cart,
     })
-    wx:wx.setStorageSync("cart", cart)
+    wx.setStorageSync("cart", cart)
     // 调用方法更新价格
     this.getallprice()
   },
 
+  // 输入商品个数
+  handleblur(e){
+    console.log(e)
+    let index = e.currentTarget.dataset.index
+    let value = Number(e.detail.value) 
+    // 用户体验，如果输入的是小数，则转换为整数
+    value = Math.floor(value)
+    if (value<=0){
+      wx.showToast({
+        title: '请输入正确的商品数',
+        icon: 'none',
+        duration: 2000
+      })
+      value = 1
+    }
+    this.data.cart[index].number = Number(value)
+    this.setData({
+      cart: this.data.cart
+    })
+    this.getallprice()
+  },
 
   // 封装一个计算总价的方法
   getallprice(){
@@ -95,6 +116,7 @@ Page({
       allprice: allprice,
       allnumber: allnumber
     })
+    wx.setStorageSync("cart", this.data.cart)
   },
 
   // 全选的按钮
@@ -113,6 +135,7 @@ Page({
       // 调用计算的方法，重新计算价格
       this.getallprice()
   },
+
   // 单个商品的单选
   checkitem(e){
     // 点击改变此时的check的状态

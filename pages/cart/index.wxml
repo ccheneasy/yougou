@@ -51,7 +51,7 @@
                 bindtap="calcnum" 
                 data-index="{{index}}"
                 data-number="{{-1}}"></view>
-                <input class="flexitem" value="{{item.number}}"></input>
+                <input class="flexitem" bindblur="handleblur" type="number" data-index='{{index}}' value="{{item.number}}"></input>
                 <view 
                 class="iconfont iconjjia- flexitem" 
                 bindtap="calcnum" 
