@@ -84,7 +84,7 @@
     </view>
 
     <!-- 结算 -->
-    <view class="jiesuan">结算({{allnumber}})</view>
+    <navigator class="jiesuan" url="/pages/order_enter/index">结算({{allnumber}})</navigator>
   </view>
   
 </view>

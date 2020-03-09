@@ -1,0 +1,6 @@
+
+
+<view class="container">
+  <image mode="widthFix" src="../../images/reg_logo@2x.png"></image>
+  <button type="primary" size="mini" open-type="getUserInfo" bindgetuserinfo="handleinfo">授权</button>
+</view>
