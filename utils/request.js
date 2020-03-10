@@ -27,6 +27,12 @@ const request =( config={} )=>{
     if(config.url.search(/^http/)===-1){
       config.url = request.defaults.baseURL + config.url
     }
+
+    // 加一个加载提示框，优化体验，在未加载完成时，页面变得无法操作
+    wx.showLoading({
+      title: '加载中',
+    })
+
     // 在函数体里面调用wx的请求方法
     wx.request({
       // 将传入的参数解构出来
@@ -47,6 +53,9 @@ const request =( config={} )=>{
         // 在这里拿到res的参数
         // 调用错误拦截器的方法,传参
         request.errors(res)
+
+        // 在这个不管成功还是失败都会执行的函数里，当加载完成时，关闭加载提示框
+        wx.hideLoading()
       }
     })
   })
