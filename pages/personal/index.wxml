@@ -1,2 +1,61 @@
-<!--pages/personal/index.wxml-->
-<text>pages/personal/index.wxml</text>
+
+
+<view class="container">
+  <!-- 个人头像部分 -->
+  <view class="userinfo">
+    <view class="iconfont iconshezhi" ></view>
+    <view class="userimg">
+      <view class="img">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <open-data type="userNickName"></open-data>
+    </view>
+    <view class="iconfont iconxinxi"></view>
+  </view>
+
+  
+  <!-- 整个下部分 -->
+  <view class="content">
+
+    <!-- 个人收藏店铺部分 -->
+    <view class="storeinfo">
+      <view class="star" wx:for="{{['收藏的店铺','收藏的商品','关注的商品','我的足迹']}}" wx:key="index" >
+        <text>{{0}}</text>
+        <view>{{item}}</view>
+      </view>
+    </view>
+
+    <!--我的订单 -->
+    <view class="title">我的订单</view>
+    <view class="paycontent">
+      <view class="payitem">
+        <view class="iconfont icondaifukuan"></view>
+        <text>待付款</text>
+      </view>
+      <view class="payitem">
+        <view class="iconfont icondaishouhuo-"></view>
+        <text>待收货</text>
+      </view>
+      <view class="payitem">
+        <view class="iconfont iconrefund"></view>
+        <text>退款/退货</text>
+      </view>
+      <view class="payitem">
+        <view class="iconfont icondingdan"></view>
+        <text>全部订单</text>
+      </view>
+    </view>
+
+    <!-- 收货地址管理 -->
+    <view class="title adress">收货地址管理</view>
+
+    <view>
+      <view class="title service">
+        <view>联系客服</view>
+        <text>13888888888</text>
+      </view>
+      <view class="title">意见反馈</view>
+      <view class="title">设置</view>
+    </view>
+  </view>
+</view>
