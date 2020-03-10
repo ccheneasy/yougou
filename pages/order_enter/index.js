@@ -15,9 +15,13 @@ Page({
   },
 
   onShow: function () {
+    // 将购物车里面勾选的商品筛选出来
+    // let cart = wx.getStorageSync('cart').filter(v=>{
+    //   return v.check
+    // })
     this.setData({
       adress: wx.getStorageSync('adress'),
-      cart: wx.getStorageSync('cart')
+      cart:wx.getStorageSync('cart')
     })
     // 调用方法更新价格
     this.getallprice()
@@ -92,6 +96,23 @@ Page({
           let {pay} = res.data.message
           // 调用微信原生支付接口
           wx.requestPayment(pay)
+
+          // 下面有点体验不好，未做支付成功后的返回
+
+          // 完成付款后，将已经付完款的商品从总购物车数据中删除
+          let cart = this.data.cart.filter(v=>{
+            return !v.check
+          })
+          // 将该数组存进本地储存
+          wx.setStorageSync("cart", cart)
+          // 弹窗提醒
+          wx.showToast({
+            title: '支付成功',
+            icon: 'success',
+            duration: 2000
+          })
+          // 返回上一个页面
+          wx.navigateBack()
         })
 
       })

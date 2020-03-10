@@ -30,7 +30,7 @@
     </view>
     <!-- 循环的商品项 -->
     <view >
-      <view class="contentitem" wx:for="{{cart}}" wx:key="index">
+      <view class="contentitem" wx:for="{{cart}}" wx:if="{{item.check}}" wx:key="index">
         <!-- 预览图 -->
         <view class="itemcontent">
           <image mode="aspectFill" src="{{item.logo}}">
